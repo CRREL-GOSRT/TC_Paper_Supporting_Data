@@ -28,9 +28,11 @@ In addition to the CRREL-GOSRT model, you will need the following python librari
 Within the scripts, all paths should be relative to this folder when accessing data.
 That is, the data paths should work just fine.  One exception is that you will need to set the MaterialPath in the namelist to
 point to the material path in your local GOSRT folder.
+
 ---
 
 All supporting data is in the SampleData Folder including model output and observations.
+**Note**: the .vtk mesh files are too large to store on GitHub, and are available upon request.
 
 ---
 
