@@ -1,4 +1,4 @@
-# Supporting Python Scripts and Data for Cryosphere Article
+# Supporting Python Scripts and Data for Cryosphere Article [![DOI](https://zenodo.org/badge/536283362.svg)](https://zenodo.org/badge/latestdoi/536283362)
 
 Letcher, T., Parno, J., Courville, Z., Farnsworth, L. and Olivier, J., 2021. A generalized photon-tracking approach to simulate spectral snow albedo and transmissivity using X-ray microtomography and geometric optics. *The Cryosphere Discussions*, pp.1-30.
 
