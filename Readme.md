@@ -32,7 +32,12 @@ point to the material path in your local GOSRT folder.
 ---
 
 All supporting data is in the SampleData Folder including model output and observations.
-**Note**: the .vtk mesh files are too large to store on GitHub, and are available upon request.
+
+**Note**: the .vtk mesh files are too large to store on GitHub, and are available upon request (see contact information below).
+These files are required to run:
+
+- MakeFigure2.py
+- MakeFigure5.py
 
 ---
 
