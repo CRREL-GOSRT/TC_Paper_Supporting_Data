@@ -1,13 +1,15 @@
+"""
+This script aims to replicate figures 8 from: A generalized photon tracking approach to simulate spectral snow
+                                                    albedo and transmittance using X-ray microtomography and
+                                                    geometric optics.
+
+This script will take ~ 1hr or so to run on a standard computer.
+"""
 import numpy as np
 from matplotlib import pyplot as plt
 import glob,sys,os
 
-###
-### This script aims to replicate figures 9 and 8 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  This script will take ~ 1hr or so to run on a standard computer.  I apologize for typos / misspellings in the comments.
+
 
 ## need to initially set up a couple of figures and plotting options.
 

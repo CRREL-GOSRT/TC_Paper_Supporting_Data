@@ -1,8 +1,11 @@
-# -*- coding: utf-8 -*-
 """
-Created on Fri Sep  3 16:04:42 2021
+This script is a supporting script to make figure 12 from: A generalized photon tracking approach to simulate spectral snow
+                                                     albedo and transmittance using X-ray microtomography and
+                                                     geometric optics.
 
-@author: RDCRLJTP
+  Specifically, this script will create the "spectral output file for the 340mm deep virgin snowpack"
+  This script will take ~ 20-40 minutes or so to run on a standard computer.
+
 """
 import sys,os,glob
 from matplotlib import pyplot as plt
@@ -11,16 +14,9 @@ import matplotlib.pyplot as plt
 from crrelGOSRT import SlabModel
 import vtk
 
-###
-### This script is a supporting script to make figure 12 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  Specifically, this script will create the "spectral output file for the 340mm deep virgin snowpack"
-###  This script will take ~ 20-40 minutes or so to run on a standard computer.
-### I apologize for typos / misspellings in the comments.
 
-## This function can be used to get the zenith angle from the time/location. using the solarposition code from
+
+## This function can be used to get the zenith angle from the time/location using the solarposition code from
 ## Samuel Bear Powell.  Note, any method you want to use to get this information is fine, this is just how it's done here.
 
 def GetZenith(time,latitude,longitude,elevation,timeformat='%Y-%m-%d_%H:%M:%S'):

@@ -1,17 +1,19 @@
 ## Continuous Medium Photon-Tracking Model ##
+"""
+This example shows how to make figure 3 from
+    A generalized photon tracking approach to simulate spectral snow albedo and
+    transmittance using X-ray microtomography and
+    geometric optics.
+
+This script will take ~60-120 seconds to run based on your specific inputs.
+NOTE -> because of the random-walk nature of the model, this will not exactly replicate the figure, but rather something that is similar to it.
+"""
 import numpy as np
 from matplotlib import pyplot as plt
 import glob as glob,os,sys
 from matplotlib import cm
 from crrelGOSRT import SlabModel, RTcode, Utilities
-###
-### This example shows how to make figure 3 from
-###     A generalized photon tracking approach to simulate spectral snow albedo and
-###     transmittance using X-ray microtomography and
-###     geometric optics.
-###
-### This script will take ~60-120 seconds to run based on your specific inputs.
-### NOTE -> because of the random-walk nature of the model, this will not exactly replicate the figure, but rather something that is similar to it.
+
 
 ## Get the namelist and set the model depths.
 cwd = os.getcwd()
@@ -27,13 +29,13 @@ layerLabs=['Coarse Grain','Fine Grain']
 
 breakout=False
 
-wv = 850 ## Wave length.  Should be < 1000nm for optimal results.
+wv = 850 ## Wavelength.  Should be < 1000nm for optimal results.
 Zenith = 0.0 ## Zenith Angle.  Recommended 0.0 for this example, but can be set to something else.
 Azi = 100 ## Azimuth angle, does not matter much.
 TracePhotons = 2  ## how many photons to track.  Must be at least 2 due to model architecture.
 
 while breakout == False:
-    ## Note, this may take a while to for a minimum depth value to approach 50mm.  You can change this by setting the
+    ## Note, this may take a while to run for a minimum depth value to approach 50mm.  You can change this by setting the
     ## min value to a shallower depth.
     albedo,abso,transmiss,Xout,Yout,Zout,PowerOut=Slab.PhotonTrace(wv,Zenith,Azi,TracePhotons,verbose = False)
 

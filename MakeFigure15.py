@@ -1,3 +1,10 @@
+"""
+This script aims to replicate figure 15 from: A generalized photon tracking approach to simulate spectral snow
+                                                     albedo and transmittance using X-ray microtomography and
+                                                     geometric optics.
+
+This script will take 1-3 seconds or so to run on a standard computer.
+"""
 from matplotlib import pyplot as plt
 import numpy as np
 
@@ -6,12 +13,7 @@ import pandas as pd
 import sys,os,glob
 
 
-###
-### This script aims to replicate figure 15 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  This script will take 1-3 seconds or so to run on a standard computer.  I apologize for typos / misspellings in the comments.
+
 
 ## first need to to set up some figure plotting options.
 fig = plt.figure(constrained_layout=True,figsize=(10,9))
@@ -30,7 +32,7 @@ depth=34 ## note that depth here is in centimeters. #
 layerTops=[34,31,19,14,13,9,8,0] ## Tops of each layer.
 LayerTypes=['DF','RG','F','CR','F','CR','F'] ## Grain form of each layer.
 
-## Help orient the color / label for each gin form.
+## Help orient the color / label for each grain form.
 TypeDict={'DF':['New Snow','#a6cee3'],
           'RG':['Mixed Rounded Grains','#1f78b4'],
           'F':['Facets','#b2df8a'],

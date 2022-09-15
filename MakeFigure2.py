@@ -1,20 +1,22 @@
 ## test photon track! ##
-import sys,os,glob
+"""
+This python script makes figure2 from the paper -> A generalized photon tracking:approach to
+                                                  simulate spectral snow albedo and transmittance using X-ray
+                                                    microtomography and geometric optics.
+
+Note that the option to make a figure is simply called as part of the RayTracing_OpticalProperties subroutine.
+"""
+import os,glob
 from crrelGOSRT import PhotonTrack
-import numpy as np
 import matplotlib.pyplot as plt
 
-## This python script makes figure2 from the paper -> A generalized photon tracking:approach to
-##                                                    simulate spectral snow albedo and transmittance using X-ray
-##                                                    microtomography and geometric optics.
 
-##Note thathe option to make a figure is simply called as part of the RayTracing_OpticalProperties subroutine.
 cwd=os.getcwd()
 SnowType = 'Facets'
 
 parentPath=glob.glob(os.path.join(cwd,'SampleData/%s/*.vtk'%SnowType))[0] ## path to the microCT .vtk mesh file. -> MUST MAKE SURE THIS IS CORRECT
 MaterialPath = '/path/to/Materials/' ## file where the ice-refractive index.csv file is stored.
-WaveLength='1000nm' ## Wavelength.
+WaveLength='1000nm' ## Wavelength
 VoxelRes='19.88250um' ## Voxel resolution
 
 OutputName=os.path.join(cwd,'OPTICAL_%s_example.txt'%SnowType)

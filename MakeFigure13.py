@@ -1,3 +1,10 @@
+"""
+This script aims to replicate figure 13 from: A generalized photon tracking approach to simulate spectral snow
+                                                   albedo and transmittance using X-ray microtomography and
+                                                   geometric optics.
+
+This script will take ~ 2-3 seconds or so to run on a standard computer.
+"""
 import numpy as np
 from matplotlib import pyplot as plt
 from datetime import datetime, timedelta
@@ -7,13 +14,6 @@ from sklearn import linear_model
 import glob as glob
 import sys
 import os
-
-###
-### This script aims to replicate figure 13 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  This script will take ~ 2-3 seconds or so to run on a standard computer.  I apologize for typos / misspellings in the comments.
 
 
 
@@ -78,7 +78,7 @@ def main():
 
     ax=plt.subplot(211) ## this is the f_ice plot.
 
-    for fdx, f in enumerate(formDict.keys()): ## loop through each plotting gain form and plot with appropriate color
+    for fdx, f in enumerate(formDict.keys()): ## loop through each plotting grain form and plot with appropriate color
         FormData=csvdata[csvdata['SnowType']==f]
 
         ax.scatter(FormData['Mesh Density'].values,FormData['F_ice'].values,
