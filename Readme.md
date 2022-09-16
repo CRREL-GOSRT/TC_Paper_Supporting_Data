@@ -21,6 +21,8 @@ In addition to the CRREL-GOSRT model, you will need the following python librari
 - pandas
 - matplotlib
 - sklearn
+- vtk
+- pyvista
 
 Within the scripts, all paths should be relative to this folder when accessing data.
 That is, the data paths should work just fine.  One exception is that you will need to set the MaterialPath in the namelist to

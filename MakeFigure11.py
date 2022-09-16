@@ -1,4 +1,12 @@
 ## Continuous Medium Photon-Tracking Model ##
+"""
+ This script aims to replicate figure 11 from: A generalized photon tracking approach to simulate spectral snow
+                                                     albedo and transmittance using X-ray microtomography and
+                                                     geometric optics.
+
+ This script will take ~ 1-2 seconds or so to run on a standard computer.
+
+"""
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
@@ -6,12 +14,6 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 import os,glob,sys
 
-###
-### This script aims to replicate figure 11 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  This script will take ~ 1-2 seconds or so to run on a standard computer.  I apologize for typos / misspellings in the comments.
 
 ## first set up some paths.
 Pits=['Fine_Grain','Coarse_Grain']
@@ -63,7 +65,7 @@ for pdx, p in enumerate(Pits):
         ## simply load the transmissivity data from the model output into the transmission array.
         Transmiss[pdx,:,tdx]=cdata['Transmissivty'].values
 
-        ## sure, do the same thing with albedo.
+        ## do the same thing with albedo.
         Alb=cdata['Albedo'].values
         SpecAlb[pdx,:,tdx]=Alb
 

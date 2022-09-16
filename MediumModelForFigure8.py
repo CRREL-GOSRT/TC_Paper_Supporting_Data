@@ -1,8 +1,7 @@
-# -*- coding: utf-8 -*-
 """
-Created on Fri Sep  3 16:04:42 2021
-
-@author: RDCRLJTP
+This script is a supporting script to make figure 8 from: A generalized photon tracking approach to simulate spectral snow
+                                                     albedo and transmittance using X-ray microtomography and
+                                                     geometric optics.
 """
 import sys,os,glob
 from matplotlib import pyplot as plt

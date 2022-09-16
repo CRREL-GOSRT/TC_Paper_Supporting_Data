@@ -1,3 +1,10 @@
+"""
+This script aims to replicate figures 9 and 10 from: A generalized photon tracking approach to simulate spectral snow
+                                                     albedo and transmittance using X-ray microtomography and
+                                                     geometric optics.
+
+This script will take ~ 1hr or so to run on a standard computer
+"""
 import numpy as np
 from matplotlib import pyplot as plt
 import pandas as pd
@@ -6,31 +13,26 @@ from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 from crrelGOSRT import SlabModel, RTcode, Utilities
 
-###
-### This script aims to replicate figures 9 and 8 from: A generalized photon tracking approach to simulate spectral snow
-###                                                     albedo and transmittance using X-ray microtomography and
-###                                                     geometric optics.
-###
-###  This script will take ~ 1hr or so to run on a standard computer.  I apologize for typos / misspellings in the comments.
 
-## need to initially set up a couple of figures and plotting options.
+
+## need to initially set up a couple of figures and plotting options
 axes=[]
 subplots=(5,4)
 
 fig1=plt.figure(figsize=(12,10)) ## this is the BRDF polar plot figure
 fig2=plt.figure(figsize=(10,7)) ## this is the albedo vs. zenith angle plot figure
 
-## add a subplot to figure 2.
+## add a subplot to figure 2
 ax=fig2.add_subplot(111)
 ax.tick_params(axis='x', labelsize=11)
 ax.tick_params(axis='y', labelsize=11)
 ######
 
-## set a few wavelengths to use.
-WaveLengths=[650,800,1000,1300] ## in nanometers.
+## set a few wavelengths to use
+WaveLengths=[650,800,1000,1300] ## in nanometers
 Zenith = np.arange(5,90,5) ## in degrees
-Azi=0.0 ## in degrees.
-nPhotons = 10000 ## number of photons used in the slab model.
+Azi=0.0 ## in degrees
+nPhotons = 10000 ## number of photons used in the slab model
 
 cwd = os.getcwd() ## Get current working directory, assumes folder structure as though you are running these out of the GitHub.
 
@@ -43,7 +45,7 @@ for zdx, z in enumerate(Zenith):
 
 axes.append(fig1.add_subplot(*subplots,zdx+1,projection='polar'))
 
-##Now that the plot axes are set, we initialize the slab model.
+## Now that the plot axes are set, we initialize the slab model.
 Slab=SlabModel.SlabModel(namelist='namelist_figure8.txt') ## Start with the same config as figure_8.
 Slab.namelistDict['DiffuseFraction']=0.0 ## Since we're looking at the direct reflectance, set diffuse fraction to 0.
 Slab.namelistDict['MasterPath']=os.path.join(cwd,'SampleData/FineGrains/') ## Set the path and file name to point to the fine grain file.
